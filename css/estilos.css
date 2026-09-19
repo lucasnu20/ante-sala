@@ -1,0 +1,476 @@
+/* ==========================================================================
+   ANTE SALA — hoja de estilos 
+   Introducción a la programación web · HTML5 + CSS3
+   Orden: variables · base · cabecera · main · componentes · pie ·
+   ========================================================================== */
+
+/* -------------------------------------------------- Paleta y tipografías */
+:root {
+  --color-fondo:        #f4f4f1;  /* fondo (pared de galería) */
+  --color-texto:        #1b1b1b;  /* texto (tinta)            */
+  --color-acento:       #1f4e5f;  /* acento (petróleo)        */
+  --color-acento-fuerte:#123b48;  /* acento en hover          */
+  --color-borde:        #d9d6cf;  /* borde (línea fina)       */
+  --color-superficie:   #ffffff;  /* tarjetas y celdas        */
+  --color-suave:        #5a5750;  /* texto secundario         */
+
+  --fuente-titulo: "Playfair Display", Georgia, "Times New Roman", serif;
+  --fuente-cuerpo: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* -------------------------------------------------- Reset / box model */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-acento);
+}
+
+a:hover {
+  color: var(--color-acento-fuerte);
+}
+
+/* El foco siempre visible: nunca se elimina el contorno sin reemplazo. */
+a:focus,
+button:focus,
+.boton:focus {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------- Titulares */
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  line-height: 1.2;
+  color: var(--color-texto);
+}
+
+h1 { font-size: 2.4rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.6rem; margin: 1.8rem 0 .8rem; }
+h3 { font-size: 1.15rem; margin: 1rem 0 .4rem; }
+
+/* -------------------------------------------------- Cabecera (Flexbox) */
+.cabecera {
+  display: flex;
+  flex-direction: column;      /* celular: apilado */
+  gap: .8rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.marca {
+  display: block;
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.marca__nombre {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.marca__tipo {
+  display: block;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  color: var(--color-suave);
+}
+
+.menu ul {
+  display: flex;               /* Flexbox también en el menú */
+  flex-wrap: wrap;
+  gap: .4rem 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: inline-block;
+  padding: .35rem .25rem;
+  text-decoration: none;
+  color: var(--color-texto);
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+  color: var(--color-acento);
+  border-bottom-color: var(--color-borde);
+}
+
+/* Página activa (opcional) */
+.menu a.actual {
+  color: var(--color-acento);
+  border-bottom-color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* -------------------------------------------------- Main */
+.contenido {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.entrada {
+  max-width: 65ch;
+  font-size: 1.1rem;
+  color: var(--color-suave);
+}
+
+.curatorial p {
+  max-width: 68ch;
+}
+
+/* -------------------------------------------------- Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero__intro {
+  max-width: 55ch;
+  font-size: 1.15rem;
+}
+
+.hero__imagen {
+  margin: 0;
+}
+
+.hero__imagen img {
+  width: 100%;
+  border: 1px solid var(--color-borde);
+}
+
+/* Botón principal */
+.boton {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: #ffffff;
+  text-decoration: none;
+  padding: .7rem 1.2rem;
+  border: none;
+  border-radius: 2px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--color-acento-fuerte);
+  color: #ffffff;
+}
+
+/* -------------------------------------------------- Tarjetas (Flexbox) */
+.tarjetas__fila {
+  display: flex;
+  flex-direction: column;      /* celular: una columna */
+  gap: 1rem;
+}
+
+.tarjeta {
+  flex: 1;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-acento);
+  padding: 1.2rem;
+}
+
+.tarjeta h3 {
+  margin-top: 0;
+}
+
+.tarjeta p {
+  margin: .3rem 0;
+}
+
+/* -------------------------------------------------- Artistas */
+.artistas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  padding: 1.2rem;
+}
+
+.artista__foto {
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid var(--color-borde);
+}
+
+.tecnicas {
+  margin: .3rem 0 0;
+  padding-left: 1.2rem;
+}
+
+/* -------------------------------------------------- Galería (Grid) */
+.galeria__grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* celular: 1 columna */
+  gap: 1.2rem;
+}
+
+.obra {
+  margin: 0;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  padding: .8rem;
+}
+
+.obra img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* lo agrego para que las imagenes esten todas en el mismo cuadrado */
+  object-fit: cover;
+}
+
+.obra figcaption {
+  margin-top: .6rem;
+  font-size: .92rem;
+  color: var(--color-suave);
+}
+
+/* -------------------------------------------------- Tabla de obras */
+.tabla-scroll {
+  overflow-x: auto;            /* evita desborde en pantallas chicas */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: .6rem .2rem;
+  font-weight: 600;
+  color: var(--color-suave);
+}
+
+th, td {
+  border: 1px solid var(--color-borde);
+  padding: .6rem .75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background-color: var(--color-acento);
+  color: #ffffff;
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #faf9f6;
+}
+
+.nota {
+  font-size: .9rem;
+  color: var(--color-suave);
+}
+
+/* -------------------------------------------------- Listas de info / visita */
+.lista-info,
+.redes {
+  padding-left: 1.2rem;
+}
+
+/* Enlace interno "Volver arriba" */
+.volver {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.volver:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------- Pie */
+.pie {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1.25rem;
+  background-color: var(--color-texto);
+  color: #e7e6e2;
+}
+
+.pie a {
+  color: #e7e6e2;
+}
+
+.pie a:hover {
+  color: #ffffff;
+}
+
+.pie__titulo {
+  font-size: 1.1rem;
+  margin: 0 0 .6rem;
+  color: #ffffff;
+}
+
+.pie address {
+  font-style: normal;
+  line-height: 1.9;
+}
+
+.pie .redes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+}
+
+.pie__nota {
+  font-size: .85rem;
+  color: #b9b7b1;
+}
+
+
+/* ==========================================================================
+   Responsive — un breakpoint (escritorio)
+   ========================================================================== */
+@media (min-width: 768px) {
+
+  .cabecera {
+    flex-direction: row;               /* nombre a un lado, menú al otro */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .contenido {
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  h1 { font-size: 3rem; }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__texto,
+  .hero__imagen {
+    flex: 1;
+  }
+
+  .tarjetas__fila {
+    flex-direction: row;               /* tarjetas en fila */
+  }
+
+  .galeria__grid {
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas en escritorio */
+  }
+
+  .artista {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .artista__foto {
+    max-width: 200px;
+    flex-shrink: 0;
+  }
+
+  .pie {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.5rem 2rem;
+  }
+
+  .pie__col {
+    flex: 1;
+  }
+}
+
+/* ==========================================================================
+   Modo oscuro (opcional) — se activa según la preferencia del sistema
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo:        #16181a;
+    --color-texto:        #ececea;
+    --color-acento:       #7fb7b0;
+    --color-acento-fuerte:#a7d3cd;
+    --color-borde:        #333739;
+    --color-superficie:   #1e2124;
+    --color-suave:        #a9a8a4;
+  }
+
+  .boton { color: #16181a; }
+  .boton:hover { color: #16181a; }
+  thead th { color: #16181a; }
+  tbody tr:nth-child(even) { background-color: #232629; }
+  .pie { background-color: #0f1113; }
+}
+
+/* ==========================================================================
+   Impresión (opcional) — sin menú, fondo blanco
+   ========================================================================== */
+@media print {
+  .menu,
+  .boton,
+  .volver {
+    display: none;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .tarjeta,
+  .obra,
+  .artista,
+  table {
+    border: 1px solid #000000;
+  }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

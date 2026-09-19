@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANTESALA, el espacio previo a algo más grande; misterioso y sugerente. Horarios, muestra actual y ubicación.">
+  <title>Ante Sala - Colección de obras</title>
+
+  <!-- Imágenes: ilustraciones originales en formato SVG creadas para este proyecto. -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/estilos.css"> <!-- linkeo la hoja de estilos -->
+</head>
+<body>
+
+  <header class="cabecera" id="inicio">
+    <a class="marca" href="index.html">
+      <span class="marca__nombre">ANTE SALA</span>
+      <span class="marca__tipo">El espacio previo a algo más grande; misterioso y sugerente</span>
+    </a>
+    <nav class="menu" aria-label="Navegación principal">
+      <ul>
+        <li><a class="actual" aria-current="page" href="index.html">Inicio</a></li>
+        <li><a href="artistas.html">Artistas</a></li>
+        <li><a href="exposicion.html">Exposición</a></li>
+        <li><a href="visita.html">Visitas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido">
+
+    <section class="hero" aria-labelledby="titulo-inicio">
+      <div class="hero__texto">
+        <h1 id="titulo-inicio">ANTE SALA</h1>
+        <p class="hero__intro">
+          Nuestro espacio nace como un laboratorio dinámico dedicado a la exhibición, circulación y venta de arte contemporáneo. Con un programa de exposiciones temporales, la galería propone proyectar las voces que redefinen la escena artística de la ciudad, proponiendo experiencias que dialoguen directamente con la arquitectura del lugar y la mirada del espectador.
+        </p>
+        <p>
+          <a class="boton" href="exposicion.html">Ver la muestra actual</a>
+        </p>
+      </div>
+      <figure class="hero__imagen">
+        <img src="img/img-inicio.jpeg" width="880" height="560"
+             alt="Sala de la galería con tres obras enmarcadas colgadas en la pared, un ventanal con luz natural y un banco de madera en el centro.">
+      </figure>
+    </section>
+
+    <section class="tarjetas" aria-labelledby="titulo-visita">
+      <h2 id="titulo-visita">Para tu visita</h2>
+      <div class="tarjetas__fila">
+
+        <article class="tarjeta">
+          <h3>Próxima muestra</h3>
+          <p><em>Detrás de los muros</em></p>
+          <p>Apertura del 15 de Octubre al 15 de Diciembre</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Horarios</h3>
+          <p>Martes a sábado, de 14 a 20 h.</p>
+          <p>Domingo y lunes cerrado.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Ubicación</h3>
+          <p>Calle Ficticia 1240, Rosario.</p>
+          <p>Entrada libre y gratuita.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__col">
+      <h2 class="pie__titulo">ANTE SALA</h2>
+      <address>
+        Calle Ficticia 1240, Rosario.<br>
+        Tel.: <a href="tel:+543410000000">+54 341 000 0000</a><br>
+        <a href="mailto:antesala@gmail.com">antesala@gmail.com</a>
+      </address>
+    </div>
+    <div class="pie__col">
+      <h2 class="pie__titulo">Seguinos</h2>
+      <ul class="redes">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="https://www.uai.edu.ar">Sitio institucional</a></li>
+      </ul>
+    </div>
+    <div class="pie__col">
+      <p class="pie__nota">
+        Ilustraciones originales en SVG realizadas para el proyecto.
+        <br>Imagenes de artistas y obras sacadas de sus redes sociales e internet.
+      </p>
+      <p><a class="volver" href="#inicio">Volver arriba ↑</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
